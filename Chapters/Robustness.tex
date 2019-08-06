@@ -1,0 +1,110 @@
+\subsection{Overlapping Rolling Windows}
+In a recent paper, \citet{britten2011improved} examine the impact of overlapping dependent variables on the inference from standard Fama-MacBeth cross-sectional regressions. The overlap induces an autocorrelation pattern in the standard errors of the cross-sectional regressions and commonly used methods (e.g., White or common Newey-West standard errors) to deal with this autocorrelation are inadequate and can lead to misleading estimates of the confidence intervals associated with coefficient estimates obtained from finite samples.\footnote{\citet{britten2011improved} transform original regressions into an equivalent representation in which the dependent variables are non-overlapping to remove the autocorrelation. Their method is easily applicable within standard frequentist analyses and they show that conventional inference procedures (OLS-, White-, Newey-West- standard errors) are asymptotically valid when applied to the transformed regression.} As the rolling windows overlap in our model in Eqs.(\ref{asset}), (\ref{cross}) and (\ref{delta_t}), we check the robustness of our results in Section \ref{estimation_results}.  Specifically, we re-estimate our model using different frequencies of the cross-sectional regressions in Eq.(\ref{cross}).
+\par Table \ref{table9} reports the results. In Panel A, we estimate the cross-sectional regressions at each quarter-end rolling the window three months at a time. The results are very similar compared to the results using monthly cross-sectional regressions (see Table \ref{table3}).\footnote{We repeated the analysis of Section \ref{relative_performance} using double-adjusted alpha obtained from quarterly cross-sectional regressions. In untabulated results, we find that inference is qualitatively similar to that based on double-adjusted alpha from monthly cross-sectional regressions.} All characteristics except operating profitability remain significantly associated with six-factor alphas. Moreover, we find an increase in the posterior standard deviations for the momentum, profitability and investment characteristics. In Panel B, we estimate the cross-sectional regressions at a semi-annual frequency. We use less periods to estimate the systematic relation between alphas and characteristics, which leads to a further increase in posterior standard deviations. Consequently, we find more tenuous relations between six-factor alphas and the momentum and investment characteristics.
+\par Another factor to consider is the frequency of mutual fund portfolio disclosure. The Thomson Reuters database provides quarterly snapshots of fund portfolios, which we keep constant between quarters to create a monthly time series of fund holdings (see Appendix A). Consequently, the variation in fund-level characteristics within quarters is only caused by the monthly variation in firm characteristics of each fund position. The staleness in our holdings data might compound the autocorrelation in the standard errors described above. While our analysis would benefit from portfolio disclosure at a higher frequency, the potential effects of frequent mutual fund portfolio disclosure remains the focus of a longstanding debate among practitioners, regulators, and academics.
+
+% \begin{singlespacing}
+% \begin{table}[h!]
+% \small
+% \centering
+% \setlength{\tabcolsep}{16.5pt}
+% {\captionsetup{justification=centering,singlelinecheck=off}
+% \caption{\bfseries Rolling window frequency robustness}}
+% \caption*{This table presents the results of the estimation of the model in Eqs.(\ref{asset}), (\ref{cross}) and (\ref{delta_t}) using different frequencies of the cross-sectional regressions in Eq.(\ref{cross}). We estimate this model during the period February 2001 to December 2016, using an estimation period of two years to estimate the six-factor model in Eq.(\ref{asset}), rolling the window three months at a time between quarter-ends in Panel A and six months at a time in Panel B. The characteristics (Z) are the logarithm of market capitalization (Mcap), the logarithm of book-to-market ratio (B/M), the logarithm of one plus the past twelve-month cumulative return (Mom12), operating profitability (Profit) and asset growth (Invest). Each characteristic is standardized by subtracting the cross-sectional mean each month. We estimate the model for each characteristic in isolation and for all characteristics in a joint model. We presents the posterior mean and standard deviation for the aggregate-level parameters in $\bar{\delta}$, based on the posterior distribution of the parameters constructed from 5000 iterations of the Gibbs sampler with the first 2500 iterations discarded as a burn-in period. Estimates in bold font indicate that the 95\% credible interval of the posterior distribution does not include zero. 
+% }
+% {\captionsetup{justification=centering,singlelinecheck=off}
+
+% \begin{tabular}{crrrrrr}
+% \hline
+% \multicolumn{7}{l}{Panel A:  Quarterly cross-sectional regressions}                                                                                                                          \\
+% Cnst   & \textbf{-0.003}      & \textbf{-0.003}      & \textbf{-0.003}      & \textbf{-0.003}             & \textbf{-0.003}                    & \textbf{-0.002}             \\
+%       & (0.000)              & (0.000)              & (0.000)              & (0.000)                     & (0.000)                            & (0.000)                     \\
+% Mcap   & \textbf{-0.002}      &                      &                      &                             &                                    & \textbf{-0.002}             \\
+%       & (0.000)              &                      &                      &                             &                                    & (0.000)                     \\
+% B/M    &                      & \textbf{-0.003}      &                      &                             &                                    & \textbf{-0.004}             \\
+%       &                      & (0.000)              &                      &                             &                                    & (0.001)                     \\
+% Mom12  &                      &                      & \textbf{0.019}       &                             &                                    & \textbf{0.005}                       \\
+%       &                      &                      & (0.003)              &                             &                                    & (0.005)                     \\
+% Profit &                      &                      &                      & -0.011                      &                                    & -0.003                      \\
+%       &                      &                      &                      & (0.003)                     &                                    & (0.002)                     \\
+% Invest &                      &                      &                      &                             & \textbf{0.022}                     & \textbf{0.016}              \\
+%       &                      &                      &                      &                             & (0.007)                            & (0.007)                     \\
+%       &                      &                      &                      &                             &                                    &                             \\
+% \multicolumn{7}{l}{Panel B:  Semi-annual cross-sectional regressions}                                                                                                                        \\
+% Cnst                 & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} \\
+%                      & (0.000)         & (0.000)         & (0.000)         & (0.000)         & (0.000)         & (0.000)         \\
+% Mcap                 & \textbf{-0.002} &                 &                 &                 &                 & \textbf{-0.002} \\
+%                      & (0.000)         &                 &                 &                 &                 & (0.000)         \\
+% B/M                  &                 & \textbf{-0.003} &                 &                 &                 & \textbf{-0.003} \\
+%                      &                 & (0.001)         &                 &                 &                 & (0.001)         \\
+% Mom12                &                 &                 & \textbf{0.017}  &                 &                 & 0.006           \\
+%                      &                 &                 & (0.004)         &                 &                 & (0.007)         \\
+% Profit               &                 &                 &                 & -0.011          &                 & -0.003          \\
+%                      &                 &                 &                 & (0.004)         &                 & (0.002)         \\
+% Invest               &                 &                 &                 &                 & \textbf{0.017}  & 0.012           \\
+%  &                 &                 &                 &                 & (0.009)         & (0.009)         \\ \hline
+% \end{tabular}
+% \end{table}
+% \end{singlespacing}
+
+\subsection{Characteristic-based Benchmark Approach}
+\label{section5B}
+\citet{daniel1997measuring} develop a new measure of mutual fund performance which use benchmarks based on the firm characteristics of mutual fund holdings. The benchmarks are constructed from the returns of passive portfolios sorted on characteristics that are matched with the characteristics of the evaluated fund's holdings. Specifically, the DGTW characteristic selectivity (CS) measure is calculated as 
+\begin{equation}
+    CS_{it} = \sum_{j=1}^{N_{it}} w_{jt-1} (R_{jt}-R^{b_{jt}}_t),
+\end{equation}
+where $w_{jt-1}$ is the portfolio weight on stock $j$ at the end of month $t-1$, $R_{jt}$ is the month $t$ return of stock $j$, $R^{b_{jt}}_t$ is the month $t$ return of the characteristic-based benchmark portfolio that is matched to stock $j$, and $N_{it}$ is the number of holdings of fund $i$ in month $t$. We use the DGTW CS measure to adjust fund returns for size, value, momentum, profitability and investment effects. In Appendix E, we describe the construction of the characteristic-based benchmark portfolios in greater detail. 
+\par To test whether this characteristic-based performance measure fully adjusts fund returns for the main anomalies, we regress cross-sectionally the DGTW CS measure on the factor betas from the Fama-French six-factor model. Particularly, we conduct the following panel regression
+\begin{equation}
+    CS_{i,t-23:t} = c_{0t} + \sum^6_{k=1} c_{kt}\beta_{ikt} + v_{it},
+\end{equation}
+where the dependent variable is the average DGTW CS measure of fund $i$ across a 24-month period ending in month $t$. The independent variables include the six-factor betas of fund $i$ estimated over the same 24-month period using daily fund returns. The model residuals are given by $v_{it}$. Beginning with the $24^{\text{th}}$ month of our sample, we estimate the monthly cross-sectional regressions over the period December 2002 to December 2016, consisting of 169 months.
+\par Table \ref{table10} reports the results. In Panel A, we only adjust returns for size, value and momentum effects. When considered in isolation, we find significant relations between the DGTW CS measure and the market, momentum and profitability betas. That is, the characteristic-based measure under-adjusts for exposures to the momentum and profitability factors. When we consider all factor betas together, the profitability beta is no longer significantly related with characteristic-adjusted fund performance. In Panel B, we adjust returns for all characteristics and the results are qualitatively similar. 
+\par In sum, we conclude that the characteristic-based measure of \citet{daniel1997measuring} does not fully adjust fund performance for the main anomalies. Controlling only for factor betas, as in Fama-French factor models, or only for characteristics, as in DGTW, may overlook the other effect, and in so doing materially impact estimates of fund manager skill. 
+
+% \begin{singlespacing}
+% \begin{table}[h!]
+% \setlength{\tabcolsep}{23pt}
+% \centering
+% \small
+% {\captionsetup{justification=centering,singlelinecheck=off}
+% \caption{ \bfseries DGTW CS measure vs. six-factor betas}}
+% \caption*{This table presents the time series averages of monthly cross-sectional regressions of the DGTW characteristic selectivity (CS) measure on the Fama-French six-factor betas. We calculate the average DGTW CS measure across the past 24 months. We estimate the six-factor model over the same 24-month period using daily fund returns. In Panel A, the DGTW CS measure controls for the size, value and momentum characteristics. In Panel B, the DGTW CS measure also controls for the profitability and investment characteristics. \citet{fama1973risk} t-statistics with the \citet{newey1986simple} correction of 12 lags are reported in parenthesis. Estimates significant at the 5\% are in bold font. Starting with the $24^{\text{th}}$ month in our sample, the monthly regressions cover the period December 2002 to December 2016.}
+% \setlength{\tabcolsep}{14pt}
+% \label{my-label}
+% \begin{tabular}{crrrrrrr}
+% \hline
+% \multicolumn{8}{l}{Panel A: Size, value and momentum characteristics}                                                     \\
+% Cnst & \textbf{0.225}  & 0.003   & 0.001  & -0.004         & 0.013          & 0.003  & \textbf{0.207}  \\
+%      & (3.30)          & (0.31)  & (0.06) & (-0.40)        & (1.81)         & (0.32) & (2.89)          \\
+% RMRF & \textbf{-0.227} &         &        &                &                &        & \textbf{-0.211} \\
+%      & (-3.09)         &         &        &                &                &        & (-2.71)         \\
+% SMB  &                 & -0.008  &        &                &                &        & -0.008          \\
+%      &                 & (-0.35) &        &                &                &        & (-0.31)         \\
+% HML  &                 &         & 0.090  &                &                &        & 0.071           \\
+%      &                 &         & (1.67) &                &                &        & (1.65)          \\
+% WML  &                 &         &        & \textbf{0.207} &                &        & \textbf{0.323}  \\
+%      &                 &         &        & (2.31)         &                &        & (3.89)          \\
+% RMW  &                 &         &        &                & \textbf{0.116} &        & 0.063           \\
+%      &                 &         &        &                & (2.03)         &        & (1.18)          \\
+% CMA  &                 &         &        &                &                & 0.010  & 0.001           \\
+%      &                 &         &        &                &                & (0.11) & (0.02)          \\
+%      &                 &         &        &                &                &        &                 \\
+% \multicolumn{8}{l}{Panel B: All characteristics}                                                      \\
+% Cnst & \textbf{0.250}  & 0.006   & 0.007  & 0.000          & 0.016          & 0.011  & \textbf{0.218}  \\
+%      & (3.54)          & (0.59)  & (0.68) & (0.01)         & (1.79)         & (1.20) & (3.31)          \\
+% RMRF & \textbf{-0.246} &         &        &                &                &        & \textbf{-0.223} \\
+%      & (-3.10)         &         &        &                &                &        & (-3.08)         \\
+% SMB  &                 & 0.014   &        &                &                &        & 0.013           \\
+%      &                 & (0.76)  &        &                &                &        & (0.60)          \\
+% HML  &                 &         & 0.046  &                &                &        & 0.024           \\
+%      &                 &         & (1.06) &                &                &        & (0.48)          \\
+% WML  &                 &         &        & \textbf{0.237} &                &        & \textbf{0.351}  \\
+%      &                 &         &        & (2.59)         &                &        & (4.11)          \\
+% RMW  &                 &         &        &                & \textbf{0.092} &        & 0.067           \\
+%      &                 &         &        &                & (2.23)         &        & (1.27)          \\
+% CMA  &                 &         &        &                &                & 0.019  & 0.041           \\
+%      &                 &         &        &                &                & (0.29) & (0.91)          \\ \hline
+% \end{tabular}
+% \end{table}
+% \end{singlespacing}

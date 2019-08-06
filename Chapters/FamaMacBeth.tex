@@ -1,0 +1,213 @@
+\label{section3}
+In this section, we examine the role of both factor betas and firm characteristics in explaining the returns of mutual funds. For this purpose we run cross-sectional regressions of individual mutual fund returns on their factor betas and characteristics. We conduct the traditional two-pass procedure of \citet{fama1973risk} with rolling estimation of factor betas. To address the inherent errors-in-variables (EIV) bias, we use the EIV-corrected estimator of \citet{chordia2015cross}. Using the metric of \citet{lindeman1980introduction}, we obtain the relative contributions of factor betas and characteristics to the explanatory power of the joint model. 
+
+\subsection{Two-pass Procedure}
+\label{twopass}
+An asset pricing model seeks to explain the cross-section of expected asset returns in terms of their covariances with certain risk factors. Let $F_t$ = [$F_{1t}$,...,$F_{Kt}$]' be a $K$ $\times$ 1 vector of observed factors at time $t$ and let $R_{it}$ be the return of fund $i$ in excess over the market return. Assume that asset returns are governed by the following factor model:
+\begin{equation}
+    \label{factor_model}
+    R_{it} =  \alpha_{i} + \beta_{i}' F_t + \epsilon_{it},
+\end{equation}
+where $\alpha_{i}$ is the asset return unexplained by the factor model, $\beta_i$ =  [$\beta_{i1}$,...,$\beta_{iK}$]' is a $K$ $\times$ 1 vector with factor loadings (betas), and $\epsilon_{it}$ are the model residuals.\par Many empirical tests of asset pricing models employ the \citet{fama1973risk} two-stage regression to test whether risk factors bear a risk premium in the cross-section of assets. Considering the possibility that the zero-beta rate differs from the risk-free rate, a general specification of a $K$-factor asset pricing model can be written as 
+\begin{equation}
+\label{fama}
+E_{t-1}(R_{it}) = \gamma_{0t} + \beta_{it-1}'\gamma_{1t},
+\end{equation}
+where $E_{t-1}$($R_{it}$) are expected excess returns,  $\gamma_0$ is the excess zero-beta rate over the risk-free rate, and $\gamma_1$ is a $K$ $\times$ 1 vector of risk premia. The superscript $t-1$ denotes that $\beta_{it-1}$ is estimated with excess returns up until time $t-1$. 
+\par The first stage of the Fama-MacBeth procedure is to estimate the factor betas through time series regressions in a factor model as presented in Eq.(\ref{factor_model}). In this regression we can include the entire time series \citep{jensen1972capital} or rolling windows \citep{fama1973risk}. We use the latter approach as this allows for time variation in factor betas. This paper employs a rolling window length of two years for the estimation of factor betas. Employing a shorter period of time increases the estimation error in the factor betas, while a longer period leads to a slow variation in the factor betas. The second stage of the Fama-MacBeth procedure is to obtain risk premiums of the estimated factor betas. This entails a cross-sectional regression of excess returns on estimated factor betas at each time $t$, as displayed by Eq.(\ref{fama}). The time series average of these estimates yields the overall estimated risk premia. We consider models with constant risk premia as this is more accustomed in existing literature. 
+
+% \par More recently, \citet{pukthuanthong2014resolving} and \citet{jegadeesh2016empirical} have proposed an instrumental variables approach to mitigate the EIV-bias. Recall that the explanatory variables in the second pass regression suffer from endogeneity. A standard econometric solution is to define a particular set of well-behaved instruments which meet two conditions: (1) the instruments are correlated with the endogenous variables and (2) the instruments are uncorrelated with the residuals. They propose estimated factor betas from non-overlapping observations to serve as instruments for the second pass regression. We have explored the IV-estimator in simulations. The IV-estimator did reduce the negative bias on $\gamma$, but exhibits the highest variability among all estimators.\footnote{In untabulated simulation results, the IV-estimator ranked second behind the EIV-corrected estimator of \citet{chordia2015cross}. A major pitfall of instrumental variable estimation is the "weak instrument" problem, which is caused by low cross-correlations between endogenous variables and instruments, which may cause nonsensical estimates. Factor betas on value and momentum factors are most prone to time-variation, due to the volatile nature of these anomalies. In simulations, these factors exhibit the highest variability due to low correlated instruments.}
+
+% \subsubsection*{IV estimator}
+% \label{IV_section}
+% \citet{jegadeesh2016empirical} propose an instrumental variables approach to mitigate the EIV-bias. Recall that the explanatory variables in the second pass regression suffer from endogeneity. A standard econometric solution is to define a particular set of well-behaved instruments which meet two conditions: (1) the instruments are correlated with the endogenous variables and (2) the instruments are uncorrelated with the residuals. They propose estimated betas from non-overlapping observations to serve as instruments for the second pass regression. Since returns are only weakly autocorrelated, if at all, the second condition of the IV-estimator is satisfied, i.e., the instruments are uncorrelated from the estimation error in beta estimates. The first condition is trivially satisfied if the true betas exhibit moderate time variation, ensuring strong correlation between instruments and variables. \citet{jegadeesh2016empirical} show that the IV estimator yields nearly unbiased risk premium estimates when time series length $T$. 
+% \par Specifically, the IV estimator is written as
+% \begin{equation}
+%     \label{IV}
+%     \gamma_{t+1}^{IV} = (\hat{B}\romannum{1}_{IV,t}'\hat{B}\romannum{1}_{EV,t})^{-1}\hat{B}\romannum{1}_{IV,t}'R_{t+1}, 
+% \end{equation}
+% where $\hat{B}\romannum{1}_{IV,t}$ and $\hat{B}\romannum{1}_{EV,t}$ are the set of instrumental and explanatory variables, respectively. In the first pass regression, we estimate the betas within odd months and even months separately. When estimating premia in month $t$, if this month is even, the instrumental variables are odd-month betas and vice versa in case month $t$ is odd. There is a small chance that the cross-products of $\hat{B}\romannum{1}_{IV,t}$ and $\hat{B}\romannum{1}_{EV,t}$ are close to non-invertible, which may lead to nonsensical estimates. To mitigate this issue, we revert back to the OLS estimator for time periods where the difference between the IV and OLS estimators is bigger than 100\%. 
+
+\subsection{Cross-sectional Regressions}
+We estimate the risk premia harvested by funds following the \citet{fama1973risk} two-pass procedure described in Section \ref{twopass}. Estimated factor betas will serve as explanatory variables alongside characteristics underlying these factors in monthly cross-sectional regressions. For each fund $i$ in a given month $t$, we estimate Eq.(\ref{factor_model}) using past daily returns over a period of two years ending with month $t-1$. This results, given $N_t$ individual funds, into a $N_t$ $\times$ $K$ matrix of estimated factor betas $\hat{B}_{t-1}$. In addition, let $Z_{t-1}$ be a $N_t$ $\times$ $L$  matrix of lagged characteristics. The characteristics (Z) include the logarithm of market capitalization (Mcap), the logarithm of book-to-market ratio (B/M), the logarithm of one plus the past twelve-month cumulative return (Mom12), operating profitability (Profit), and asset growth (Invest). Beginning with the second month of our sample, risk premia are estimated over the period February 2001 to December 2016, consisting of 191 months.  
+\par For the monthly cross-sectional regressions, define the matrix of (lagged) regressors in month $t$ as
+\begin{equation}
+    \label{X}
+    \hat{X}_{t-1} = [\romannum{1}_{N_t} \hspace{0.1cm}\hat{B}_{t-1} \hspace{0.1cm} Z_{t-1}], 
+\end{equation}
+where $\romannum{1}_{N_t}$ is a $N_t$ $\times$ 1 vector of ones. 
+Each month, we define a 1 $\times$ (1+$K$+$L$) vector of coefficient estimates as $\hat{\Gamma}_{t}$ = ($\hat{\gamma}_{0t}$, $\hat{\gamma}_{1t}$, $\hat{\gamma}_{2t}$), where $\hat{\gamma}_{0t}$ is the zero-beta rate,  $\hat{\gamma}_{1t}$ contains the risk premia on factor betas, and $\hat{\gamma}_{2t}$ contains the coeffcients on characteristics. The OLS estimator is given by
+\begin{equation}
+\label{Y_OLS}
+    \hat{\Gamma}^{OLS}_{t} = (\hat{X}'_{t-1}\hat{X}'_{t-1})^{-1}\hat{X}'_{t-1}R_t,
+\end{equation}
+where $R_t$ is a $N_t$ $\times$ 1 vector of excess fund returns. The time series average of $\hat{\Gamma}_{t}$ yields the final coefficient estimates. Traditional asset pricing theories validate factor models by rejecting the hypothesis of $\gamma_1$ = 0. A joint rejection of $\Gamma$ = 0 economically implies that the factor model does not fully explain the cross-sectional differences among returns, but exposure to the risk factors partially accounts for the expected returns of assets relative to each other. 
+
+\subsection*{3.B.1 \hspace{0.1cm} Errors-in-variables (EIV) Bias}
+The second-pass cross-sectional regression is inherently subject to the EIV bias, since the explanatory variables are estimations resulting from the first-pass time series regressions. Since $\hat{B}_{t-1}$ is estimated with error, the OLS-estimator of $\Gamma$ will be biased downwards. We describe the EIV bias thoroughly in Appendix B. 
+% \par Based on the works of \citet{theil1971principles} and \citet{litzenberger1979effect}, 
+\par \citet{chordia2015cross} propose the following bias-corrected estimator of $\Gamma_t$ 
+\begin{equation}
+\label{shanken}
+    \hat{\Gamma}^{EIV}_t = \left[\hat{X}'_{t-1}\hat{X}'_{t-1} - \sum^{N_t}_{i=1}M'\hat{\Sigma}_{\beta_{it-1}}M\right]^{-1}\hat{X}'_{t-1}R_t,
+\end{equation}
+where $M$ is a $K$ $\times$ (1+$K$+$L$) matrix defined as $M$ = [$0_{K\text{x}1}$ $\romannum{1}_{K\text{x}K}$ $0_{K\text{x}L}$], and $\hat{
+\Sigma}_{\beta_{it-1}}$ is the heteroskedasticity-consistent $K$ $\times$ $K$ covariance matrix estimator of \citet{white1980heteroskedasticity} for the first-pass estimation of $\beta_{it-1}$. The matrix $M$ ensures that the bias-correction only affects the $K$ $\times$ $K$ submatrix $\hat{B}_{t-1}'\hat{B}_{t-1}$ of $X_{t-1}$. 
+% \begin{equation}
+%     \label{lambda}
+%     \Lambda_t  = \begin{bmatrix} 0 & 0_{1\text{x}K} \\ 0_{K\text{x}1} & \sum_{i=1}^{N_t} \hat{\Sigma}_{\hat{\beta}^{t-1}_i} \end{bmatrix},
+% \end{equation}
+%  To allow for conditional heteroskedacity, we use the \citet{white1980heteroskedasticity} covariance matrix estimator for $\hat{\Sigma}_{\hat{\beta}^{t-1}_i}$. 
+\par This bias-corrected estimator was originally proposed by \citet{theil1971principles} and \citet{litzenberger1979effect}. 
+\citet{shanken1992estimation} generalize the EIV-corrected estimator and show that this estimator is consistent when $N_t$ diverges. \citet{chordia2015cross} gauge the statistical properties of the EIV-corrected estimator in simulations and show that the negative bias is reduced in comparison to the OLS estimator. \citet{raponi2017testing} employ this estimator in a small $T$ environment to test several prominent beta-pricing specifications of Fama-French using individual stocks. They find significant pricing ability of all factors, while the same risk premia often appear insignificantly different from zero when estimated using the traditional approach.  
+\par The EIV-corrected estimator subtracts the estimated covariance matrix of the estimator of $\beta_{it}$ from $\hat{B}_{t-1}'\hat{B}_{t-1}$, to better approximate the true value of $B_{t-1}'B_{t-1}$. However, under a finite $T$ there is the possibility that this correction will overshoot, turning the matrix in parenthesis  nearly singular or even not positive definite. This may lead to extreme estimates of $\Gamma_t$ and nonsensical inference. 
+\par To prevent this we apply the following procedure. Following \citet{chordia2015cross}, we reduce the likelihood of overshooting due to outliers by winsorizing each element of the estimated covariance matrix at the 5\% and 95\% levels across the cross-section of funds at each time $t$. Then, we apply the shrinkage procedure of \citet{raponi2017testing} using a shrinkage scalar $\lambda$ (0 $\leq$ $\lambda$ $\leq$ 1):
+\begin{equation}
+    \label{Y_EIV} 
+    \hat{\Gamma}^{\text{EIV}}_{t} = \left[\hat{X}_{t-1}'\hat{X}_{t-1} - \lambda\sum^{N_t}_{i=1}M'\hat{\Sigma}_{\beta_{it-1}}M\right]^{-1}\hat{X}_{t-1}'R_{t}.
+\end{equation}
+When $\lambda$ is one we obtain the estimator in Eq.(\ref{shanken}), whereas when $\lambda$ is zero, we obtain the OLS estimator. The choice of shrinkage parameter $\lambda$ is dependent on the eigenvalues of the matrix in parenthesis. Starting from $\lambda$ = 1, if the minimum eigenvalue of this matrix is negative, we lower $\lambda$ by an arbitrary small amount set to 0.05. We also apply this shrinkage in case the difference between the EIV-corrected and OLS coefficients is bigger than 100\%.        
+% \par The bias-corrected estimator (see Section \ref{Shanken_estimator}) requires a minor modification to accommodate the additional explanatory variables. Define the matrix with the expected estimation errors from the first-pass regressions (see Eq.(\ref{lambda})) as 
+% \begin{equation}
+% \Lambda_t = \sum^{N_t}_{i=1}M'\hat{V}(u^t_{i}')M,  
+% \end{equation}
+% where M is a $K$ $\times$ (1+$K$+$z$) matrix defined as M = [$0_{K\text{x}1}$ $\romannum{1}_{K\text{x}K}$ $0_{K\text{x}z}$], and $\hat{V}(u_{i,t}')$ is the heteroskedasticity-consistent $K$ $\times$ $K$ covariance matrix estimator of \citet{white1980heteroskedasticity} for the first-pass estimation of $\beta_{i,t}$. The transformation using the matrix M ensures that the correction is only applied to the factor betas. The bias-corrected estimator of $\Gamma$ is the time series average of monthly estimates
+% \begin{equation}
+%     \hat{\Gamma}^{EIV}_t = (\hat{X}'_t\hat{X}'_t - \lambda\Lambda_{t-1})^{-1}\hat{X}'_tR_t,
+% \end{equation}
+% where $\lambda$ is the shrinkage parameter derived using the procedure described in Section \ref{Shanken_estimator}. 
+% \par Finally, the IV estimator also requires a modification in the presence of the characteristics. The IV estimator in Eq.(\ref{IV}) is estimated under exact identification, i.e., the number of endogenous variables equals the number of instruments. A model is over-identified if there are more instruments than endogenous variables. Fund characteristics are exogenous variables in the second-pass regression, but can serve as additional instruments for the estimated betas, as these are loadings on factors which are constructed based on those same characteristics. A special case of the IV estimator is the Two-Stage Least Squares (2SLS) estimator, which is the most efficient IV estimator (see Theorem 5.3 in \citet{wooldridge2010econometric}). Let $\hat{B}_{IV,t}$ and $\hat{B}_{EV,t}$ both be $N_t$ x $K$ matrices containing instrumental and endogenous variables (as discussed in Section \ref{IV_section}), respectively. The first stage of the 2SLS estimation entails a cross-sectional regression of each endogenous variable on both instruments and characteristics (exogenous variables)\footnote{Exogenous variables are included as the first stage regressors because it is exogenous and excluding those would lead to a loss in efficiency or consistency (most likely both) of the 2SLS estimator.}:
+% \begin{equation}
+%     \label{first_stage}
+%     \hat{B}^k_{EV,it-1} = c_{0k} + \lambda_{EV,k} \hat{B}_{IV,it-1} + \lambda_{EX,k} Z_{it-1} + \xi^k_i, \hspace{0.4cm} i = 1,...,N_t, \hspace{0.1cm} k = 1,...,K,
+% \end{equation}
+% where $\hat{B}^k_{EV,it-1}$ is the $k^{th}$ column of $\hat{B}_{EV,t-1}$, $\lambda_{IV,k}$ and $\lambda_{EX,k}$ are the estimated parameters corresponding to the instruments and characteristics. The second stage regression replaces the endogenous variables with the fitted values of the first-stage regression. Let E($\hat{B}_{EV,t-1}$) be the fitted values and define the matrix of regressors as 
+% \begin{equation}
+% \tilde{X}_t = [E(\hat{B}_{EV})\romannum{1}_{t-1} \hspace{0.1cm} Z_{t-1}].    
+% \end{equation}
+% The 2SLS estimator of $\Gamma$ is 
+% \begin{equation}
+%         \hat{\Gamma}^{2SLS}_t = (\tilde{X}'_t\tilde{X}'_t)^{-1}\tilde{X}'_tR_t,
+% \end{equation}
+% where we switch back to the OLS estimator in months where the 2SLS and OLS estimators differ by more than 100\%. 
+\par To evaluate the statistical properties of the bias-corrected estimators of $\Gamma$, we conduct a battery of simulations using parameters based on the real data. We investigate the bias and the root-mean-squared error (RMSE) of the estimators in Eqs.(\ref{Y_OLS}) and (\ref{Y_EIV}). The set-up and results of the simulations are presented in Appendix C.   
+
+\subsection{Relative Contribution of Betas and Characteristics}
+We aim to calculate measures of the relative contributions of factor betas and characteristics to the explanatory power of the combined model in explaining the cross-sectional differences in expected returns. For this purpose, we conduct the measure of \citet{lindeman1980introduction}, henceforth LMG,\footnote{The measure of \citet{lindeman1980introduction} is made known by \citet{kruskal1987relative} and generalized by \citet{chevan1991hierarchical} to multiple classes of regression models. More recently, \citet{lipovetsky2001analysis} reinvented LMG from a game-theory perspective; \citet{azen2003dominance} propose dominance analysis, which generalizes LMG to other metrics of model fit than $R^2$.} which suggests using sequential sums of squares from the linear model. The relative contribution of predictor $j$ is measured by averaging over all possible permutations of the $p$ regressors the increase of $R^2$ when regressor $j$ is added to the model based on the other regressors entered before $j$ in the model.
+\par Specifically, let the increase in $R^2$ by adding $j$ be
+\begin{equation}
+    \label{R2diff}
+    \Delta_j(r) = R^2_{+j}(S_j(r)) - R^2(S_j(r)),
+\end{equation}
+where $R^2(S_j(r))$ denotes the $R^2$ of the model including a set of regressors entered before $j$ in the permutation $r$, and $R^2_{+j}(S_j(r))$ denotes the $R^2$ of the model with the regressors in $S_j(r)$ including $j$. 
+The contribution of $j$ is the increase of $R^2$ averaged on all $2^p$ permutations of the $p$ regressors as 
+\begin{equation}
+    \label{LMG1} 
+    \text{LMG}(j) = \frac{1}{p!} \sum_{\text{rpermutation}} \Delta_j(r).
+\end{equation}
+This formula can be rewritten in different forms. An intuitive manner is LMG as the average over model sizes $i$ of average improvements in $R^2$ when adding regressor $j$ to a model of size $i$
+without $j$ (see, \citet{christensen1992comment}), that is,
+\begin{equation}
+    \label{LMG2}
+      \text{LMG}(j) = \frac{1}{p} \sum^{p-1}_{i=0} \left(\sum_{\substack{S \subseteq \{1,..,j-1,j+1,...,p\} \\  n(S) = i}} \Delta_j(S) \bigg/ {p-1\choose i}  \right), 
+\end{equation}
+where S is a set of $i$ regressors excluding regressor $j$. 
+\par Each month $t$, we compute the relative contribution of each variable in the second-pass regression of the Fama-MacBeth procedure. In particular, we estimate this regression repeatedly for different permutations of the regressors to compute the contribution of each regressor using Eq.(\ref{LMG2}). These values are averaged over all months to obtain a more precise aggregate measure. Due to a high computational burden, LMG is only computed using OLS without the bias-correction. By ignoring the EIV bias, the variance of the estimated factor betas is exaggerated, leading to a minor overestimation of the relative contribution of factor betas. 
+
+\subsection{Cross-sectional Results}
+\label{results}
+We present the results for the CAPM, the \citet{fama1993common} three-factor model, the \citet{carhart1997persistence} four-factor model, the \citet{FAMA20151} five-factor model and a six-factor model with all factors. This allows us to assess the cross-sectional power of each factor to explain mutual fund returns and to determine whether these are priced in the cross-section. First, we examine the untabulated results of the factor models in the absence of characteristics. Estimated with OLS, the risk premium of the market beta is statistically indistinguishable from zero in all factor models, which is consistent with previous studies which find that the market factor is not priced. In the three-factor model, the risk premia (corrected for the EIV bias) on the size and value factors equal 0.32\% (t = 1.79) and 0.36\% (t = 1.76), respectively. Exposure to the momentum factor yields similar rewards. A portfolio of funds with a unit exposure to the momentum factor earns an average monthly premium of 0.28\% (t = 1.53). The two added factors RMW and CMA exhibit insignificant risk premia in both the five-factor model and six-factor model. The intercepts are also noteworthy, as the zero-beta rates range between 0.19\% and 0.48\%, with t-statistics above 2. Large differences between the zero-beta rate and the risk-free rate are also found in earlier works including \citet{lewellen2010skeptical} and \citet{frazzini2014betting}. 
+\par Table 2 reports the estimated coefficients on both factor betas and characteristics with the EIV bias correction and without. We find that the market factor remains unpriced in the cross-section when the characteristics are included. The size premium also remains indistinguishable from zero in all factor models and has decreased when  market capitalization (Mcap) is added to the model. The coefficient on Mcap is economically significant in all factor models and has a negative sign in all cases, as funds holding positions in smaller stocks earn higher returns. The premium on the value factor is significant in the three-factor model and in the four-factor model, while the coefficient on book-to-market (B/M) is insignificant in all cases. The value premium becomes insignificant in the five-factor model and the six-factor model, possibly due to correlation between the value factor and the quality factors.
+
+\begin{singlespacing}
+\begin{table}[h!]
+\setlength{\tabcolsep}{4.5pt}
+\centering
+ {\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Cross-sectional regressions of mutual fund returns }}
+\caption*{This table presents the time series averages of risk premia ($\gamma$) estimated using the cross-section of mutual fund (monthly) returns following the \citet{fama1973risk} procedure. The monthly regressions are of the form: 
+\begin{equation*}
+R_{t} = \gamma_{0t} + \gamma_{1t}\hat{B}_{t-1} + \gamma_{2t}Z_{t-1} + \xi_{t}, \hspace{0.2cm} t=1,...,T.
+\end{equation*} We employ the CAPM, the \citet{fama1993common} three-factor model, the \citet{carhart1997persistence} four-factor model, the \citet{FAMA20151} five-factor model and a six-factor model combining all factors. Factor betas ($\hat{B}$) are estimated from rolling time series regressions using daily returns from the past two years. The characteristics (Z) are the logarithm of market capitalization (Mcap), the logarithm of book-to-market ratio (B/M), the logarithm of one plus the cumulative past twelve-month cumulative return (Mom12), operating profitability (Profit) and asset growth (Invest). Each characteristic is winsorized at the 0.5\% and the 99.5\% levels. To address the EIV bias, we employ the EIV-corrected estimator of \citet{chordia2015cross}. Risk premia (in percent per month) are fitted using OLS, both with EIV-correction and without. \citet{fama1973risk} t-statistics are reported in parenthesis. Estimates significant at the 5\% are in bold font. Risk premia are estimated over the period February 2001 until December 2016.}
+ \small
+\label{my-label}
+\begin{tabular}{lrrrrrrrrrrrrrr}
+\hline
+      & \multicolumn{2}{c}{CAPM}        &           & \multicolumn{2}{c}{FF 3FM}      &           & \multicolumn{2}{c}{Carhart 4FM}  &           & \multicolumn{2}{c}{FF 5FM}       &           & \multicolumn{2}{c}{FF 6FM}       \\ \cline{2-3} \cline{5-6} \cline{8-9} \cline{11-12} \cline{14-15} 
+      & OLS            & EIV            &           & OLS            & EIV            &           & OLS            & EIV             &           & OLS            & EIV             &           & OLS            & EIV             \\ \hline
+Cnst  & \textbf{1.013} & \textbf{1.020} &           & 0.685          & 0.628          &           & \textbf{0.887} & \textbf{0.857} &  & \textbf{0.651} & 0.638          &  & \textbf{0.769}  & \textbf{0.759} \\
+      & (2.46)         & (2.49)         &           & (1.88)         & (1.67)         &           & (2.61)         & (2.38)         &  & (2.00)         & (1.93)         &  & (2.47)          & (2.37)         \\
+$\beta_{MKT}$  & -0.071         & -0.080         &           & -0.011         & -0.011         &           & -0.029         & -0.033         &  & 0.130          & 0.177          &  & 0.100           & 0.133          \\
+      & (-0.24)        & (-0.26)        &           & (-0.04)        & (-0.03)        &           & (-0.09)        & (-0.10)        &  & (0.46)         & (0.61)         &  & (0.35)          & (0.46)         \\
+$\beta_{SMB}$ &                &                &           & 0.098          & 0.120          &           & 0.049          & 0.061          &  & 0.099          & 0.099          &  & 0.074           & 0.073          \\
+      &                &                &           & (0.62)         & (0.66)         &           & (0.30)         & (0.33)         &  & (0.66)         & (0.59)         &  & (0.48)          & (0.42)         \\
+$\beta_{HML}$  &                &                &           & \textbf{0.347} & \textbf{0.373} & \textbf{} & \textbf{0.372} & \textbf{0.412} &  & 0.220          & 0.190          &  & 0.266           & 0.252          \\
+      &                &                &           & (2.12)         & (2.09)         &           & (2.04)         & (1.99)         &  & (1.45)         & (1.07)         &  & (1.61)          & (1.30)         \\
+$\beta_{WML}$  &                &                &           &                &                &           & 0.176         & 0.227          &  &                &                &  & 0.114           & 0.195          \\
+      &                &                &           &                &                &           & (1.14)        & (1.19)         &  &                &                &  & (1.01)          & (1.13)         \\
+$\beta_{RMW}$ &                &                &           &                &                &           &                &                &  & 0.190          & 0.224          &  & 0.225           & 0.271          \\
+      &                &                &           &                &                &           &                &                &  & (1.17)         & (1.16)         &  & (1.29)          & (1.32)         \\
+$\beta_{CMA}$  &                &                &           &                &                &           &                &                &  & 0.152          & 0.141          &  & 0.173           & 0.164          \\
+      &                &                &           &                &                &           &                &                &  & (1.13)         & (0.90)         &  & (1.33)          & (1.09)         \\
+Mcap  & -0.065         & -0.065         &           & -0.047         & -0.043         &           & -0.055         & -0.052         &  & -0.050         & -0.051         &  & \textbf{-0.054} & -0.054         \\
+      & (-1.97)        & (-1.97)        &           & (-1.46)        & (-1.24)        &           & (-1.79)        & (-1.56)        &  & (-1.82)        & (-1.77)        &  & (-1.96)         & (-1.89)        \\
+B/M   & 0.004          & 0.003          &           & -0.074         & -0.082         &           & 0.072          & -0.085         &  & -0.025         & -0.010         &  & -0.031          & -0.017         \\
+      & (0.04)         & (0.03)         &           & (-0.98)        & (-1.08)        &           & (-1.08)        & (-1.26)        &  & (-0.36)        & (-0.07)        &  & (-0.50)         & (-0.27)        \\
+Mom12 & \textbf{0.783} & \textbf{0.787} & \textbf{} & \textbf{0.863} & \textbf{0.859} &           & 0.478          & 0.446          &  & \textbf{0.794} & \textbf{0.774} &  & 0.513           & 0.524          \\
+      & (2.11)         & (2.12)         &           & (2.34)         & (2.36)         &           & (1.78)         & (1.67)         &  & (2.17)         & (2.13)         &  & (1.85)          & (1.81)         \\
+Profit    & 0.066          & 0.065          &           & 0.047          & 0.046          &           & 0.019          & 0.016          &  & 0.030          & 0.025          &  & 0.003           & 0.000          \\
+      & (1.18)         & (1.17)         &           & (0.94)         & (0.94)         &           & (0.40)         & (0.34)         &  & (0.68)         & (0.59)         &  & (0.07)          & (0.02)         \\
+Invest  & -0.573         & -0.560         &           & -0.389         & -0.371         &           & -0.391         & -0.355         &  & -0.279         & 0.257          &  & -0.230          & -0.222         \\
+      & (-1.69)        & (-1.67)        &           & (-1.43)        & (-1.38)        &           & (-1.53)        & (-1.40)        &  & (-1.14)        & (-0.97)        &  & (-0.98)         & (-0.87)         \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+\vspace{-0.45cm}
+\par The estimated risk premium (in the absence of characteristics) on the momentum factor suggests that exposure to this factor is priced in the cross-section, but it may also indicate a mechanical relation between a factor beta and the underlying characteristic, such that factor betas are mere signals of the ``true'' risk factors determining expected returns. Considering the four-factor model, the premium on WML has decreased, possibly due to competition between the WML beta and momentum return (Mom12). Mom12 is significant in all factor models excluding the momentum factor, with t-statistics just above 2. \citet{lou2012flow} and \citet{vayanos2013institutional} argue that winning funds, by scaling up their existing holdings that are concentrated in past winning stocks, drive up the returns of past winning stocks and thereby enhance the subsequent return of past winning stocks. This self-enhancing mechanism may lead to higher momentum returns for funds. 
+\par The estimates of risk premia on RMW and CMA are positive and statistically insignificant, with respective estimates of 0.22\% (t = 1.16) and 0.14\% (t = 0.90) in the five-factor model, and estimates of 0.27 (t = 1.32) and 0.16\% (t = 1.09) in the six-factor model. Interestingly, the value and momentum premia exhibit a sharp reduction when adding the profitability and investment factors. In line with the other factors, we find that the estimated risk premia on exposures to the RMW and CMA factors are lower in the presence of their underlying characteristics, neither of which yielding significant estimates. The sign of the estimates are as expected; funds holding profitable stocks which invest conservatively earn higher returns. 
+\par The simulations (see Appendix C) show strong results in favor of the bias-corrected estimator. The downward bias on the estimated risk premia is partially eliminated while the root-mean-squared errors (RMSEs) are of similar magnitude between the two estimators. Regarding the empirical results, we find that correcting the EIV bias generally increases the risk premia estimates, occasionally up to 40\%. 
+
+\begin{singlespacing}
+\begin{table}[h!]
+\setlength{\tabcolsep}{18pt}
+ \centering
+ {\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Relative contributions of factor betas and characteristics}}
+\caption*{This table presents the relative contributions to the explained model variance using the metric of \citet{lindeman1980introduction}, which decomposes the model $R^2$ into the relative contributions of each variable to the explanatory power of the model. Each month $t$, we compute the relative contribution of each regressor (factor betas and characteristics) in the second-pass regression of the Fama-MacBeth procedure. We report the time series averages of the LMG metric for each variable. Relative contributions are estimated over the period February 2001 until December 2016.}
+ \small
+\label{my-label}
+\begin{tabular}{lrrrrr}
+\hline
+          & CAPM      & FF 3FM    & Carhart 4FM    & FF 5FM    & FF 6FM      \\ \hline
+\multicolumn{6}{l}{Panel A:  Relative contributions  (only betas)}         \\
+$\beta_{MKT}$         & 0.164       & 0.083     & 0.073     & 0.049     & 0.044     \\
+$\beta_{SMB}$         &             & 0.196     & 0.193     & 0.181     & 0.176     \\
+$\beta_{HML}$         &             & 0.124     & 0.113     & 0.092     & 0.076     \\
+$\beta_{WML}$         &             &           & 0.068     &           & 0.065     \\
+$\beta_{RMW}$         &             &           &           & 0.076     & 0.073     \\
+$\beta_{CMA}$              &             &           &           & 0.053     & 0.049     \\
+             &             &           &           &           &           \\
+             &             &           &           &           &           \\
+\multicolumn{6}{l}{Panel B:  Relative contributions (all characteristics)} \\
+$\beta_{MKT}$               & 0.108       & 0.066     & 0.060     & 0.044     & 0.041     \\
+$\beta_{SMB}$               &             & 0.099     & 0.096     & 0.091     & 0.088     \\
+$\beta_{HML}$               &             & 0.069     & 0.063     & 0.053     & 0.047     \\
+$\beta_{WML}$             &             &           & 0.050     &           & 0.042     \\
+$\beta_{RMW}$               &             &           &           & 0.056     & 0.056     \\
+$\beta_{CMA}$               &             &           &           & 0.039     & 0.037     \\
+Mcap         & 0.138       & 0.092     & 0.088     & 0.087     & 0.085     \\
+B/M          & 0.073       & 0.052     & 0.050     & 0.047     & 0.043     \\
+Mom12        & 0.069       & 0.056     & 0.050     & 0.051     & 0.046     \\
+Profit       & 0.014       & 0.010     & 0.010     & 0.010     & 0.010     \\
+Invest       & 0.033       & 0.026     & 0.025     & 0.023     & 0.022        \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+\vspace{-0.475cm}
+\par Table 3 reports the average relative contributions of both factor betas and characteristics. Measured by Eq.(\ref{LMG2}), the \citet{lindeman1980introduction} metric is the contribution of each variable to the total explained variance in the model. Firstly, Panel A reports the average relative contributions of factor betas in the absence of characteristics. The size factor accounts for the largest fraction of the model $\text{R}^2$, which remains stable across factor models. Including the profitability and investment factors leads to a minor reduction in explanatory power of the other factors, which indicates these factors convey new information. 
+\par 
+Panel B reports the average relative contributions in a joint model of factor betas and characteristics. We find that in each factor model, almost 50\% of the model $R^2$ is attributed to the characteristics. The relative contributions of the size and value betas decrease by roughly 50\% when Mcap and B/M are added. The RMW and CMA betas contribute roughly twice as much as their respective characteristics.  
+\par To sum up, the factor betas and characteristics both account for roughly half of the model explained variation in fund returns. These findings are consistent with those of \citet{chordia2015cross}, which find that in a joint model, firm characteristics explain a majority of cross-sectional variation in stock returns. In the remainder of this paper, we will explore the implications of the equal explanatory power of factor betas and characteristics for the performance evaluation of mutual funds. 
+
+
+

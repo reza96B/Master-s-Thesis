@@ -1,0 +1,440 @@
+\begin{singlespacing}
+
+\begin{table}[H]
+\centering
+\small
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Summary statistics of equity mutual fund sample} \label{table1}}
+\caption*{This table presents the summary statistics for the equity mutual funds sample over the period January 2001 to December 2016. Panel A reports statistics on the sample size. Panel B reports additional information on the funds. Panel C reports the cross-sectional distribution of characteristics averaged across all sample months. We weight each firm characteristic according to its current portfolio weight and calculate a fund's portfolio-weighted average characteristic. Market capitalization (Mcap) is the product between the previous month-end stock price and the previous month-end total shares outstanding. Book-to-Market (B/M) is the ratio between the most recently available book value of equity and the previous month-end market capitalization. Momentum (Mom12) is the past twelve-month cumulative return excluding the most recent month. Operating profitability (Profit) is the current revenues minus costs of goods sold, interest expense, selling, general, and administrative expenses, divided by book equity for the last fiscal year $t-1$.  Asset growth (Invest) is the percentage change in total assets from fiscal year $t-2$ to fiscal year $t-1$. Panel D reports the time series averages of the cross-sectional distributions of six-factor betas, which are estimated from rolling time series regressions using the past two years of daily fund returns. Panel E reports the time series averages of the cross-sectional correlations between factor betas and characteristics.}
+\begin{tabular}{lrrrrr}
+\hline
+                                                & Mean     & \begin{tabular}[c]{@{}l@{}}25\%\\ percentile\end{tabular} & Median   & \begin{tabular}[c]{@{}l@{}}75\%\\ percentile\end{tabular} & \begin{tabular}[c]{@{}l@{}}Standard \\ deviation\end{tabular} \\ \hline
+\multicolumn{6}{l}{Panel A: Observations}                                                                                                                               \\
+Number of distinct funds                        & 2,871    &                                                         &          &                                                           &                                                               \\
+Number of fund-report dates                     & 92,903  &                                                         &          &                                                           &                                                               \\
+Number of fund-month dates                      & 314,362   &                                                         &          &                                                           &                                                               \\
+Number of distinct stocks                       & 7,952    &                                                         &          &                                                           &                                                               \\
+                                                &          &                                                         &          &                                                           &                                                               \\
+\multicolumn{6}{l}{Panel B: Fund characteristics}                                                                                                                                                                                                           \\
+Fund age                             & 22.90   & 15.76 & 19.96  & 25.38  & 12.33   \\
+Fund monthly net return (in \%)      & 0.51    & -2.08 & 0.99   & 3.60   & 5.12    \\
+TNA (total net assets) (in millions) & 1,341.43 & 56.00 & 220.00 & 863.10 & 5,335.74 \\
+Expense ratio (in \%)                & 1.24    & 0.97  & 1.19   & 1.45   & 0.63    \\
+Turnover ratio (in \%)               & 83.19   & 34.00 & 62.00  & 105.00 & 101.68                                                \\
+                                                &          &                                                         &          &                                                           &                          
+
+
+                                  \\
+\multicolumn{6}{l}{Panel C: Fund holdings characteristics}                                                                                                                                                                                           \\
+Mcap (in millions) & 44,475.74 & 3,792.98 & 43,016.63 & 78,966.25 & 39,731.13 \\
+B/M                 & 0.46     & 0.32    & 0.44     & 0.56     & 0.16     \\
+Mom12  (in \%)      & 17.12    & 9.15    & 14.89    & 22.86    & 12.13    \\
+Profit              & 0.46     & 0.35    & 0.42     & 0.50     & 0.24     \\
+Invest              & 0.09     & 0.07    & 0.09     & 0.12     & 0.04                                               \\
+
+                                                &          &                                                         &          &      
+
+                                                    &                                                               \\
+\multicolumn{6}{l}{Panel D: Rolling window fund six-factor betas}                                                                                                                                                                                                           \\
+$\beta_{MKT}$ & 0.98  & 0.94  & 0.99  & 1.03 & 0.10 \\
+$\beta_{SMB}$ & 0.20  & -0.08 & 0.07  & 0.46 & 0.34 \\
+$\beta_{HML}$ & 0.00  & -0.16 & 0.01  & 0.16 & 0.21 \\
+$\beta_{WML}$ & 0.02  & -0.05 & 0.01  & 0.09 & 0.12 \\
+$\beta_{RMW}$ & -0.06 & -0.17 & -0.02 & 0.09 & 0.21 \\
+$\beta_{CMA}$ & -0.04 & -0.15 & -0.02 & 0.10 & 0.21 \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+ \begin{singlespacing}
+ \begin{table}[H]
+\centering
+ {\captionsetup{justification=centering,singlelinecheck=off}
+ \caption*{\bfseries Table 1 (Continued) }}
+ \caption*{\centering \small{Panel E: Cross-correlations between six-factor betas and characteristics}}
+
+ \small
+\label{my-label}
+\begin{tabular}{lrrrrrrrrrr}
+
+       \hline
+       & \text{$\beta_{SMB}$}  &\text{$\beta_{HML}$}   &\text{$\beta_{WML}$}   & \text{$\beta_{RMW}$}  & \text{$\beta_{CMA}$}   & Mcap   & B/M    & Mom12   & Profit & Invest \\ \hline
+$\beta_{MKT}$   & 0.096 & -0.093 & 0.113  & -0.204 & -0.173 & -0.023 & -0.114 & 0.170  & -0.004 & 0.077  \\
+$\beta_{SMB}$   &       & 0.095  & 0.043  & -0.142 & -0.075 & -0.816 & 0.110  & 0.283  & -0.255 & -0.064 \\
+$\beta_{HML}$   &       &        & -0.315 & 0.610  & 0.328  & -0.042 & 0.746  & -0.236 & -0.079 & -0.452 \\
+$\beta_{WML}$   &       &        &        & -0.231 & -0.270 & -0.054 & -0.469 & 0.568  & 0.103  & 0.191  \\
+$\beta_{RMW}$   &       &        &        &        & 0.361  & 0.246  & 0.367  & -0.283 & 0.136  & -0.274 \\
+$\beta_{CMA}$   &       &        &        &        &        & 0.049  & 0.354  & -0.215 & -0.004 & -0.470 \\
+Mcap   &       &        &        &        &        &        & 0.049  & 0.354  & -0.215 & -0.004 \\
+B/M    &       &        &        &        &        &        &        & -0.363 & -0.189 & -0.486 \\
+Mom12   &       &        &        &        &        &        &        &        & -0.003 & 0.054  \\
+Profit &       &        &        &        &        &        &        &        &        & 0.049  \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+\begin{singlespacing}
+\begin{table}[H]
+\setlength{\tabcolsep}{4.5pt}
+\centering
+ {\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Cross-sectional regressions of mutual fund returns} \label{table2}}
+\caption*{This table presents the time series averages of risk premia ($\gamma$) estimated using the cross-section of mutual fund (monthly) returns following the \citet{fama1973risk} procedure. The monthly regressions are of the form: 
+\begin{equation*}
+R_{t} = \gamma_{0t} + \gamma_{1t}\hat{B}_{t-1} + \gamma_{2t}Z_{t-1} + \xi_{t}, \hspace{0.2cm} t=1,...,T.
+\end{equation*} We employ the CAPM, the \citet{fama1993common} three-factor model, the \citet{carhart1997persistence} four-factor model, the \citet{FAMA20151} five-factor model and a six-factor model combining all factors. Factor betas ($\hat{B}$) are estimated from rolling time series regressions using daily returns from the past two years. The characteristics (Z) are the logarithm of market capitalization (Mcap), the logarithm of book-to-market ratio (B/M), the logarithm of one plus the cumulative past twelve-month cumulative return (Mom12), operating profitability (Profit) and asset growth (Invest). Each characteristic is winsorized at the 0.5\% and the 99.5\% levels. To address the EIV bias, we employ the EIV-corrected estimator of \citet{chordia2015cross}. Risk premia (in percent per month) are fitted using OLS, both with EIV-correction and without. \citet{fama1973risk} t-statistics are reported in parenthesis. Estimates significant at the 5\% are in bold font. Risk premia are estimated over the period February 2001 until December 2016.}
+ \small
+\label{my-label}
+\begin{tabular}{lrrrrrrrrrrrrrr}
+\hline
+      & \multicolumn{2}{c}{CAPM}        &           & \multicolumn{2}{c}{FF 3FM}      &           & \multicolumn{2}{c}{Carhart 4FM}  &           & \multicolumn{2}{c}{FF 5FM}       &           & \multicolumn{2}{c}{FF 6FM}       \\ \cline{2-3} \cline{5-6} \cline{8-9} \cline{11-12} \cline{14-15} 
+      & OLS            & EIV            &           & OLS            & EIV            &           & OLS            & EIV             &           & OLS            & EIV             &           & OLS            & EIV             \\ \hline
+Cnst  & \textbf{1.013} & \textbf{1.020} &           & 0.685          & 0.628          &           & \textbf{0.887} & \textbf{0.857} &  & \textbf{0.651} & 0.638          &  & \textbf{0.769}  & \textbf{0.759} \\
+      & (2.46)         & (2.49)         &           & (1.88)         & (1.67)         &           & (2.61)         & (2.38)         &  & (2.00)         & (1.93)         &  & (2.47)          & (2.37)         \\
+$\beta_{MKT}$  & -0.071         & -0.080         &           & -0.011         & -0.011         &           & -0.029         & -0.033         &  & 0.130          & 0.177          &  & 0.100           & 0.133          \\
+      & (-0.24)        & (-0.26)        &           & (-0.04)        & (-0.03)        &           & (-0.09)        & (-0.10)        &  & (0.46)         & (0.61)         &  & (0.35)          & (0.46)         \\
+$\beta_{SMB}$ &                &                &           & 0.098          & 0.120          &           & 0.049          & 0.061          &  & 0.099          & 0.099          &  & 0.074           & 0.073          \\
+      &                &                &           & (0.62)         & (0.66)         &           & (0.30)         & (0.33)         &  & (0.66)         & (0.59)         &  & (0.48)          & (0.42)         \\
+$\beta_{HML}$  &                &                &           & \textbf{0.347} & \textbf{0.373} & \textbf{} & \textbf{0.372} & \textbf{0.412} &  & 0.220          & 0.190          &  & 0.266           & 0.252          \\
+      &                &                &           & (2.12)         & (2.09)         &           & (2.04)         & (1.99)         &  & (1.45)         & (1.07)         &  & (1.61)          & (1.30)         \\
+$\beta_{WML}$  &                &                &           &                &                &           & 0.176         & 0.227          &  &                &                &  & 0.114           & 0.195          \\
+      &                &                &           &                &                &           & (1.14)        & (1.19)         &  &                &                &  & (1.01)          & (1.13)         \\
+$\beta_{RMW}$ &                &                &           &                &                &           &                &                &  & 0.190          & 0.224          &  & 0.225           & 0.271          \\
+      &                &                &           &                &                &           &                &                &  & (1.17)         & (1.16)         &  & (1.29)          & (1.32)         \\
+$\beta_{CMA}$  &                &                &           &                &                &           &                &                &  & 0.152          & 0.141          &  & 0.173           & 0.164          \\
+      &                &                &           &                &                &           &                &                &  & (1.13)         & (0.90)         &  & (1.33)          & (1.09)         \\
+Mcap  & -0.065         & -0.065         &           & -0.047         & -0.043         &           & -0.055         & -0.052         &  & -0.050         & -0.051         &  & \textbf{-0.054} & -0.054         \\
+      & (-1.97)        & (-1.97)        &           & (-1.46)        & (-1.24)        &           & (-1.79)        & (-1.56)        &  & (-1.82)        & (-1.77)        &  & (-1.96)         & (-1.89)        \\
+B/M   & 0.004          & 0.003          &           & -0.074         & -0.082         &           & 0.072          & -0.085         &  & -0.025         & -0.010         &  & -0.031          & -0.017         \\
+      & (0.04)         & (0.03)         &           & (-0.98)        & (-1.08)        &           & (-1.08)        & (-1.26)        &  & (-0.36)        & (-0.07)        &  & (-0.50)         & (-0.27)        \\
+Mom12 & \textbf{0.783} & \textbf{0.787} & \textbf{} & \textbf{0.863} & \textbf{0.859} &           & 0.478          & 0.446          &  & \textbf{0.794} & \textbf{0.774} &  & 0.513           & 0.524          \\
+      & (2.11)         & (2.12)         &           & (2.34)         & (2.36)         &           & (1.78)         & (1.67)         &  & (2.17)         & (2.13)         &  & (1.85)          & (1.81)         \\
+Profit    & 0.066          & 0.065          &           & 0.047          & 0.046          &           & 0.019          & 0.016          &  & 0.030          & 0.025          &  & 0.003           & 0.000          \\
+      & (1.18)         & (1.17)         &           & (0.94)         & (0.94)         &           & (0.40)         & (0.34)         &  & (0.68)         & (0.59)         &  & (0.07)          & (0.02)         \\
+Invest  & -0.573         & -0.560         &           & -0.389         & -0.371         &           & -0.391         & -0.355         &  & -0.279         & 0.257          &  & -0.230          & -0.222         \\
+      & (-1.69)        & (-1.67)        &           & (-1.43)        & (-1.38)        &           & (-1.53)        & (-1.40)        &  & (-1.14)        & (-0.97)        &  & (-0.98)         & (-0.87)         \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+
+\begin{singlespacing}
+\begin{table}[H]
+\small
+\centering
+\setlength{\tabcolsep}{16.5pt}
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Six-factor alpha vs. characteristics} \label{table3}}
+\caption*{This table presents the results of the estimation of the model in Eqs.(\ref{asset}), (\ref{cross}) and (\ref{delta_t}). We estimate this model in each month during the period February 2001 to December 2016, using an estimation period of two years to estimate the six-factor model in Eq.(\ref{asset}), rolling the window a month at a time.
+ The characteristics (Z) are the logarithm of market capitalization (Mcap), the logarithm of book-to-market ratio (B/M), the logarithm of one plus the past twelve-month cumulative return (Mom12), operating profitability (Profit) and asset growth (Invest). Each characteristic is standardized by subtracting the cross-sectional mean each month. We estimate the model for each characteristic in isolation and for all characteristics in a joint model. Panel A presents the posterior mean and standard deviation for the aggregate-level parameters in $\bar{\delta}$, based on the posterior distribution of the parameters constructed from 5000 iterations of the Gibbs sampler with the first 2500 iterations discarded as a burn-in period. Panel B presents \citet{fama1973risk} estimates
+ and \citet{fama1973risk} t-statistics with the \citet{newey1986simple} correction of 12 lags. In Panel A, estimates in bold font indicate that the 95\% credible interval of the posterior distribution does not include zero. In Panel B,  estimates in bold font indicate significance at the 5\% level.
+}
+{\captionsetup{justification=centering,singlelinecheck=off}
+
+\begin{tabular}{lrrrrrr}
+\hline
+\multicolumn{7}{l}{Panel A: Simultaneous Bayesian estimation}                                   \\ Cnst & -\textbf{0.003}  & -\textbf{0.003} & -\textbf{0.003}& -\textbf{0.003}&-\textbf{0.003} & -\textbf{0.002}\\ & (0.000) & (0.000) & (0.000) & (0.000) & (0.000) & (0.000) \\ 
+Mcap   & -\textbf{0.002}  &                 &                &        &                & \textbf{-0.002}         \\
+      & (0.000)  &                 &                &        &                & (0.000)          \\
+B/M    &         & \textbf{-0.003} &                &        &                & \textbf{-0.004} \\
+      &         & (0.000)          &                &        &                & (0.000)          \\
+Mom12  &         &                 & \textbf{0.019} &        &                & \textbf{0.005}  \\
+      &         &                 & (0.002)         &        &                & (0.003)          \\
+Profit &         &                 &                & -0.011  &                & -0.003         \\
+      &         &                 &                & (0.002) &                & (0.002)          \\
+Invest &         &                 &                &        & \textbf{0.024} & \textbf{0.017}  \\
+      &         &                 &                &        & (0.004)         & (0.004)          \\
+      &         &                 &                &        &                &                 \\
+\multicolumn{7}{l}{Panel B: Two-step OLS approach}                                   \\  Cnst & -0.002 & -0.002 &-0.002 & -0.002 & -0.002  & -0.002 \\ & (-1.40) & (-1.40) & (-1.40) & (-1.40) & (-1.40) & (-1.40) \\ 
+Mcap   & -0.001 &         &        &         &        & -0.002  \\
+      & (1.81) &         &        &         &        & (-1.60)  \\
+B/M    &        & \textbf{-0.005}  &        &         &        & \textbf{-0.006}  \\
+      &        & (-2.45) &        &         &        & (-2.29) \\
+Mom12  &        &         & \textbf{0.016}  &         &        & 0.002   \\
+      &        &         & (4.66) &         &        & (0.18)  \\
+Profit &        &         &        & -0.011  &        & \textbf{-0.005}  \\
+      &        &         &        & (-1.57) &        & (-2.27) \\
+Invest &        &         &        &         & \textbf{0.040}  & 0.023   \\
+      &        &         &        &         & (2.27) & (1.26)        \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}    
+
+ \begin{singlespacing}
+ \begin{table}[H]
+\small
+\centering
+\setlength{\tabcolsep}{16.5pt}
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Multi-factor model alphas vs. characteristics} \label{table4}}
+\caption*{This table presents the results of the estimation of the model in Eqs.(\ref{asset}), (\ref{cross}) and (\ref{delta_t}) based on several Fama-French models. We employ the CAPM, the \citet{fama1993common} three-factor model, the \citet{carhart1997persistence} four-factor model, the \citet{FAMA20151} five-factor model and a six-factor model combining all factors. We estimate the model in each month during the period February 2001 to December 2016, using an estimation period of two years to estimate the factor model in Eq.(\ref{asset}), rolling the window a month at a time. 
+ The characteristics (Z) are the logarithm of market capitalization (Mcap), the logarithm of book-to-market ratio (B/M), the logarithm of one plus the past twelve-month cumulative return (Mom12), operating profitability (Profit) and asset growth (Invest). Each characteristic is standardized by subtracting the cross-sectional mean each month. We report the posterior mean and standard deviation for the aggregate-level parameters in $\bar{\delta}$, based on the posterior distribution of the parameters constructed from 5000 iterations of the Gibbs sampler with the first 2500 iterations discarded as a burn-in period. Estimates in bold font indicates that the 95\% credible interval of the posterior distribution does not include zero. 
+}
+\begin{tabular}{lrrrrr}
+\hline
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{CAPM} & \multicolumn{1}{l}{FF 3FM} & \multicolumn{1}{l}{Carhart 4FM} & \multicolumn{1}{l}{FF 5FM} & \multicolumn{1}{l}{FF 6FM} \\ \hline
+Cnst & 0.000 & \textbf{-0.004}     & \textbf{-0.003}     & \textbf{-0.003}  & \textbf{-0.002} \\ & (0.000) & (0.000)& (0.000) & (0.000) & (0.000) \\ 
+Mcap                 & \textbf{-0.003}          & \textbf{-0.001}                     & \textbf{-0.001}                 & \textbf{-0.002}                     & \textbf{-0.002}                     \\
+                     & (0.000)                   & (0.000)                              & (0.000)                          & (0.000)                              & (0.000)                              \\
+B/M                  & \textbf{0.006}           & \textbf{0.002}                     & \textbf{0.001}                 & \textbf{-0.003}                     & \textbf{-0.003}                     \\
+                     & (0.001)                   & (0.000)                              & (0.000)                          & (0.001)                              & (0.000)                              \\
+Mom12                & \textbf{0.015}           & \textbf{0.008}                      & \textbf{0.004}                  & \textbf{0.007}                      & \textbf{0.005}                      \\
+                     & (0.003)                   & (0.003)                              & (0.003)                         & (0.003)                             & (0.003)                              \\
+Profit               & 0.003                    & 0.001                             & 0.001                          & -0.004                              & -0.003                           \\
+                     & (0.001)                   & (0.001)                              & (0.001)                          & (0.001)                              & (0.002)                              \\
+Invest               & \textbf{-0.046}          & \textbf{-0.023}                     & \textbf{0.020}                  & \textbf{0.014}                      & \textbf{0.017}                      \\
+\multicolumn{1}{l}{} & (0.005)                   & (0.004)                              & (0.004)                          & (0.004)                              & (0.004)                              \\ \hline
+\end{tabular}
+\end{table}
+ \end{singlespacing}
+ 
+\newpage
+  \begin{singlespacing}
+\begin{table}[H]
+\small
+\centering
+\setlength{\tabcolsep}{12.5pt}
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Change in performance percentile rankings} \label{table5} }
+\caption*{This table presents the differences between the performance percentile ranks based on double-adjusted six-factor alpha ($\alpha^*$) relative to six-factor alpha ($\alpha$). These performance measures are calculated using rolling windows with a window size of 24 months. Each month in our sample period we compute the difference between the percentile ranking based on alpha ($P^\alpha$) and the percentile ranking based on double-adjusted alpha ($P^{\alpha^*}$). We report the time series average distribution of the difference between performance rankings. The sample period is February 2001 to December 2016.}
+{\captionsetup{justification=centering,singlelinecheck=off}}
+
+\label{my-label}
+\begin{tabular}{crrrrrrr}
+\hline
+Percentile     & 5      & 10     & 25    & 50   & 75    & 90    & 95    \\ \hline
+Rank (\%)   &  -22.93 & -17.89 &	-8.99 &	-0.02 &	9.05 & 17.84 &	23.07 \\
+Abs. Rank (\%) & 0.99 & 	1.49 & 	4.08 &	9.03 &	15.98 & 	22.99 &	27.24\\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+\begin{singlespacing}
+\begin{table}[H]
+\small
+\centering
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{ \bfseries Mutual fund performance persistence} \label{table6} }
+\caption*{This table presents the returns of decile porfolios sorted by six-factor alpha (Panel A), double-adjusted six-factor alpha (Panel B) and characteristic-driven performance (Panel C). These performance measures are calculated using rolling windows with a window size of 24 months. Portfolios are rebalanced every quarter-end and are held for up to six years. To deal with overlapping portfolios, we follow \citet{jegadeesh1993returns} to take the equal-weighted return across overlapping portfolios formed in different quarters. Two different returns are reported: the excess (monthly) return over the risk-free rate and the Fama-French six-factor alpha. T-statistics, shown in parenthesis, are computed using White's standard errors. Estimated significant at the 5\% level are in bold font. The sample period is February 2001 to December 2016.}
+\label{my-label}
+\begin{tabular}{crrrrrrrrrrr}
+\hline
+      & \multicolumn{2}{c}{Qtr 1}         &  & \multicolumn{2}{c}{Qtr 1-4}       &  & \multicolumn{2}{c}{Qtr 5-12} &  & \multicolumn{2}{c}{Qtr 13-24} \\ \cline{2-3} \cline{5-6} \cline{8-9} \cline{11-12} 
+Decile & Excess          & 6F alpha        &  & Excess          & 6F alpha        &  & Excess   & 6F alpha          &  & Excess    & 6F alpha          \\ \cline{1-3} \cline{5-12} 
+\multicolumn{12}{l}{Panel A: Six-factor alpha ($\alpha$)}                                                                                                         \\
+1    & 0.43   & -0.27         &  & 0.44   & -0.26         &  & 0.49   & -0.18         &  & 0.57 & -0.12  \\
+2    & 0.46   & -0.20         &  & 0.45   & -0.21         &  & 0.49   & -0.15         &  & 0.56 & -0.10  \\
+3    & 0.44   & -0.19         &  & 0.45   & -0.19         &  & 0.49   & -0.15         &  & 0.56 & -0.10  \\
+4    & 0.47   & -0.16         &  & 0.47   & -0.16         &  & 0.49   & -0.13         &  & 0.56 & -0.10  \\
+5    & 0.49   & -0.13         &  & 0.49   & -0.13         &  & 0.50   & -0.12         &  & 0.56 & -0.10  \\
+6    & 0.53   & -0.09         &  & 0.52   & -0.11         &  & 0.54   & -0.10         &  & 0.57 & -0.09  \\
+7    & 0.54   & -0.08         &  & 0.54   & -0.09         &  & 0.55   & -0.08         &  & 0.57 & -0.09  \\
+8    & 0.57   & -0.06         &  & 0.56   & -0.07         &  & 0.56   & -0.08         &  & 0.59 & -0.08  \\
+9    & 0.57   & -0.05         &  & 0.57   & -0.04         &  & 0.59   & -0.06         &  & 0.59 & -0.08  \\
+10   & 0.58   & 0.01          &  & 0.58   & 0.01          &  & 0.57   & -0.06         &  & 0.58 & -0.08  \\
+10-1 & 0.15   & \textbf{0.28} &  & 0.14   & \textbf{0.27} &  & 0.08   & \textbf{0.12} &  & 0.01 & 0.05   \\
+     & (1.63) & (3.62)        &  & (1.61) & (3.85)        &  & (1.14) & (2.17)        &  & 0.16 & (1.01)     \\
+      &                 &                 &  &                 &                 &  &          &                   &  &           &                   \\
+\multicolumn{12}{l}{Panel B: Double-adjusted six-factor alpha ($\alpha^*$)}                                                                                         \\
+1    & 0.43          & -0.21         &  & 0.45          & -0.20         &  & 0.51   & -0.14         &  & 0.57   & -0.12         \\
+2    & 0.48          & -0.18         &  & 0.49          & -0.17         &  & 0.52   & -0.13         &  & 0.57   & -0.10         \\
+3    & 0.47          & -0.18         &  & 0.50          & -0.17         &  & 0.52   & -0.13         &  & 0.58   & -0.09         \\
+4    & 0.48          & -0.17         &  & 0.49          & -0.15         &  & 0.52   & -0.13         &  & 0.56   & -0.10         \\
+5    & 0.51          & -0.14         &  & 0.50          & -0.15         &  & 0.51   & -0.13         &  & 0.58   & -0.09         \\
+6    & 0.53          & -0.11         &  & 0.52          & -0.12         &  & 0.54   & -0.11         &  & 0.58   & -0.09         \\
+7    & 0.55          & -0.07         &  & 0.52          & -0.11         &  & 0.53   & -0.11         &  & 0.57   & -0.09         \\
+8    & 0.51          & -0.11         &  & 0.53          & -0.09         &  & 0.53   & -0.09         &  & 0.56   & -0.10         \\
+9    & 0.54          & -0.04         &  & 0.53          & -0.06         &  & 0.54   & -0.07         &  & 0.57   & -0.08         \\
+10   & 0.57          & -0.02         &  & 0.56          & -0.03         &  & 0.55   & -0.05         &  & 0.59   & -0.07         \\
+10-1 & \textbf{0.14} & \textbf{0.19} &  & \textbf{0.11} & \textbf{0.17} &  & 0.04   & \textbf{0.08} &  & 0.02   & \textbf{0.05} \\
+     & (3.81)        & (5.31)        &  & (3.17)        & (5.37)        &  & (1.34) & (2.94)        &  & (0.69) & (2.05)    \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+\begin{singlespacing}
+\begin{table}[H]
+\small
+\centering
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption*{ \bfseries Table 6 (Continued) }}
+\label{my-label}
+\begin{tabular}{crrrrrrrrrrr}
+\hline
+      & \multicolumn{2}{c}{Qtr 1} &  & \multicolumn{2}{c}{Qtr 1-4} &  & \multicolumn{2}{c}{Qtr 5-12} &  & \multicolumn{2}{c}{Qtr 13-24} \\ \cline{2-3} \cline{5-6} \cline{8-9} \cline{11-12} 
+Decile & Excess     & 6F alpha     &  & Excess      & 6F alpha      &  & Excess       & 6F alpha      &  & Excess       & 6F alpha       \\ \hline
+\multicolumn{12}{l}{Panel C: Characteric-driven performance ($\alpha^{char}$)}                                                                       \\
+1    & 0.48   & -0.18  &  & 0.44   & -0.22  &  & 0.47   & -0.15  &  & 0.58   & -0.09  \\
+2    & 0.47   & -0.16  &  & 0.46   & -0.17  &  & 0.47   & -0.14  &  & 0.56   & -0.09  \\
+3    & 0.46   & -0.16  &  & 0.45   & -0.16  &  & 0.48   & -0.13  &  & 0.55   & -0.10  \\
+4    & 0.44   & -0.16  &  & 0.45   & -0.15  &  & 0.48   & -0.13  &  & 0.55   & -0.10  \\
+5    & 0.42   & -0.18  &  & 0.44   & -0.15  &  & 0.50   & -0.12  &  & 0.55   & -0.11  \\
+6    & 0.45   & -0.14  &  & 0.46   & -0.13  &  & 0.52   & -0.11  &  & 0.55   & -0.11  \\
+7    & 0.52   & -0.10  &  & 0.52   & -0.10  &  & 0.55   & -0.09  &  & 0.58   & -0.10  \\
+8    & 0.59   & -0.06  &  & 0.57   & -0.08  &  & 0.59   & -0.06  &  & 0.61   & -0.08  \\
+9    & 0.62   & -0.05  &  & 0.62   & -0.05  &  & 0.60   & -0.08  &  & 0.61   & -0.07  \\
+10   & 0.63   & -0.02  &  & 0.65   & -0.02  &  & 0.60   & -0.08  &  & 0.60   & -0.07  \\
+10-1 & 0.15   & 0.16   &  & 0.20   & 0.20   &  & 0.13   & 0.07   &  & 0.02   & 0.02   \\
+     & (0.97) & (1.28) &  & (1.44) & (1.91) &  & (1.11) & (0.84) &  & (0.20) & (0.32)        \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+\newpage
+\begin{singlespacing}
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{11pt}
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{ \bfseries Relation between mutual fund performance and $R^2$}  \label{table7} }
+\caption*{This table presents the time series averages of monthly cross-sectional regressions of mutual fund performance measures on fund selectivity, measured by the contemporaneous log-transformed R-squared ($\tilde{R}^2$). As (annualized) performance measures we employ six-factor alpha ($\alpha$), double-adjusted six-factor alpha ($\alpha^*$) and characteristic-driven performance ($\alpha^{char}$). These performance measures are calculated using rolling windows with a window size of 24 months. We estimate the regressions with and without a set of control variables. \citet{fama1973risk} t-statistics with the \citet{newey1986simple} correction of 12 lags are reported in parenthesis. Estimates significant at the 5\% are in bold font. The monthly regressions cover the period February 2001 until December 2016. }
+\label{my-label}
+\begin{tabular}{crrrrrrrr}
+\hline
+            & \multicolumn{2}{c}{$\alpha$} & &  \multicolumn{2}{c}{$\alpha^*$} &  & \multicolumn{2}{c}{$\alpha^{char}$} \\ \hline
+Cnst        & \textbf{4.770}           & \textbf{4.778}           &  & \textbf{-0.518}           & \textbf{-0.540}          &  & \textbf{1.073}            & \textbf{1.110}            \\
+            & (2.01)          & (1.98)          &  & (-2.12)                   & (-2.20)                  &  & (2.76)                    & (2.61)                    \\
+$\tilde{R}2$         & \textbf{-1.148} & \textbf{-1.269} &  & -0.018                    & -0.021                   &  & \textbf{-0.314}           & \textbf{-0.306}           \\
+            & (-2.12)         & (-2.36)         &  & (-1.02)                   & (-1.18)                  &  & (-2.67)                   & (-2.55)                   \\
+ExpRatio    &                 & 8.112           &  &                           & 0.848                    &  &                           & -0.548                    \\
+            &                 & (1.30)          &  &                           & (1.62)                   &  &                           & (-0.37)                   \\
+Turnover    &                 & -0.081          &  &                           & 0.001                    &  &                           & -0.002                    \\
+            &                 & (-1.78)         &  &                           & (0.32)                   &  &                           & (-0.29)                   \\
+Log(TNA)     &                 & -0.014          &  &                           & -0.001                   &  &                           & -0.002                    \\
+            &                 & (-1.07)         &  &                           & (-0.23)                  &  &                           & (-0.45)                   \\
+Log(FundAge) &                 & 0.015           &  &                           & 0.006                    &  &                           & -0.010                    \\
+            &                 & (0.48)          &  &                           & (1.45)                   &  &                           & (-0.60)                   \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+\begin{singlespacing}
+\begin{table}[H]
+\setlength{\tabcolsep}{23pt}
+\centering
+\small
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{ \bfseries Response of fund flows to components of alpha} \label{table8}}
+\caption*{This table presents the time series averages of annual cross-sectional regressions of the one-year ahead average of monthly fund flows on double-adjusted six-factor alpha ($\alpha^*$) and characteristic-driven performance ($\alpha^{char}$). These performance measures are calculated using rolling windows with a window size of 24 months. We also estimate the regressions in which we further decompose $\alpha^{char}$ into alpha related to each individual characteristic. We estimate the regressions with and without a set of control variables. \citet{fama1973risk} t-statistics with the \citet{newey1986simple} correction of 3 lags are reported in parenthesis. Estimates significant at the 5\% are in bold font. We estimate these annual regressions at the end of each year, covering 16 years from 2001 to 2016.}
+\label{my-label}
+\begin{tabular}{crrrr}
+\hline
+Cnst                    & \textbf{0.014} & 0.004          & \textbf{0.014}  & 0.005           \\
+                        & (6.69)         & (0.58)         & (6.48)          & (0.69)          \\
+$\alpha^*$                      & \textbf{4.061} & \textbf{4.044} & \textbf{4.065}  & \textbf{4.047}  \\
+                        & (9.75)         & (9.80)         & (9.75)          & (9.81)          \\
+$\alpha^{char} & \textbf{0.396} & \textbf{0.366} &                 &                 \\
+                        & (2.41)         & (2.16)         &                 &                 \\
+$\delta^{\text{Mcap}}$ $\cdot$ Mcap            &                &                & \textbf{-1.476} & \textbf{-1.455} \\
+                        &                &                & (-2.19)         & (-2.11)         \\
+$\delta^{\text{B/M}}$ $\cdot$ B/M              &                &                & 0.275           & 0.215           \\
+                        &                &                & (0.31)          & (0.24)          \\
+$\delta^{\text{Mom12}}$ $\cdot$ Mom12              &                &                & \textbf{1.778}  & \textbf{1.720}  \\
+                        &                &                & (3.06)          & (2.91)          \\
+$\delta^{\text{Profit}}$ $\cdot$ Profit           &                &                & 0.338           & 0.221           \\
+                        &                &                & (0.37)          & (0.22)          \\
+$\delta^{\text{Invest}}$ $\cdot$ Invest            &                &                & 1.776           & 1.694           \\
+                        &                &                & (0.85)          & (0.87)          \\
+ExpRatio                &                & 0.481          &                 & 0.468           \\
+                        &                & (1.42)         &                 & (1.40)          \\
+Turnover                &                & 0.000          &                 & 0.000           \\
+                        &                & (-0.96)        &                 & (-1.07)         \\
+Log(TNA)                 &                & 0.000          &                 & 0.000           \\
+                        &                & (-0.82)        &                 & (-0.82)         \\
+Log(FundAge)             &                & 0.002          &                 & 0.002           \\
+                        &                & (1.75)         &                 & (1.78)          \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+\begin{singlespacing}
+\begin{table}[H]
+\small
+\centering
+\setlength{\tabcolsep}{16.5pt}
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\bfseries Rolling window frequency robustness} \label{table9}}
+\caption*{This table presents the results of the estimation of the model in Eqs.(\ref{asset}), (\ref{cross}) and (\ref{delta_t}) using different frequencies of the cross-sectional regressions in Eq.(\ref{cross}). We estimate this model during the period February 2001 to December 2016, using an estimation period of two years to estimate the six-factor model in Eq.(\ref{asset}), rolling the window three months at a time between quarter-ends in Panel A and six months at a time in Panel B. The characteristics (Z) are the logarithm of market capitalization (Mcap), the logarithm of book-to-market ratio (B/M), the logarithm of one plus the past twelve-month cumulative return (Mom12), operating profitability (Profit) and asset growth (Invest). Each characteristic is standardized by subtracting the cross-sectional mean each month. We estimate the model for each characteristic in isolation and for all characteristics in a joint model. We presents the posterior mean and standard deviation for the aggregate-level parameters in $\bar{\delta}$, based on the posterior distribution of the parameters constructed from 5000 iterations of the Gibbs sampler with the first 2500 iterations discarded as a burn-in period. Estimates in bold font indicate that the 95\% credible interval of the posterior distribution does not include zero. 
+}
+{\captionsetup{justification=centering,singlelinecheck=off}
+
+\begin{tabular}{crrrrrr}
+\hline
+\multicolumn{7}{l}{Panel A:  Quarterly cross-sectional regressions}                                                                                                                          \\
+Cnst   & \textbf{-0.003}      & \textbf{-0.003}      & \textbf{-0.003}      & \textbf{-0.003}             & \textbf{-0.003}                    & \textbf{-0.002}             \\
+       & (0.000)              & (0.000)              & (0.000)              & (0.000)                     & (0.000)                            & (0.000)                     \\
+Mcap   & \textbf{-0.002}      &                      &                      &                             &                                    & \textbf{-0.002}             \\
+       & (0.000)              &                      &                      &                             &                                    & (0.000)                     \\
+B/M    &                      & \textbf{-0.003}      &                      &                             &                                    & \textbf{-0.004}             \\
+       &                      & (0.000)              &                      &                             &                                    & (0.001)                     \\
+Mom12  &                      &                      & \textbf{0.019}       &                             &                                    & \textbf{0.005}                       \\
+       &                      &                      & (0.003)              &                             &                                    & (0.005)                     \\
+Profit &                      &                      &                      & -0.011                      &                                    & -0.003                      \\
+       &                      &                      &                      & (0.003)                     &                                    & (0.002)                     \\
+Invest &                      &                      &                      &                             & \textbf{0.022}                     & \textbf{0.016}              \\
+       &                      &                      &                      &                             & (0.007)                            & (0.007)                     \\
+       &                      &                      &                      &                             &                                    &                             \\
+\multicolumn{7}{l}{Panel B:  Semi-annual cross-sectional regressions}                                                                                                                        \\
+Cnst                 & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} & \textbf{-0.003} \\
+                     & (0.000)         & (0.000)         & (0.000)         & (0.000)         & (0.000)         & (0.000)         \\
+Mcap                 & \textbf{-0.002} &                 &                 &                 &                 & \textbf{-0.002} \\
+                     & (0.000)         &                 &                 &                 &                 & (0.000)         \\
+B/M                  &                 & \textbf{-0.003} &                 &                 &                 & \textbf{-0.003} \\
+                     &                 & (0.001)         &                 &                 &                 & (0.001)         \\
+Mom12                &                 &                 & \textbf{0.017}  &                 &                 & 0.006           \\
+                     &                 &                 & (0.004)         &                 &                 & (0.007)         \\
+Profit               &                 &                 &                 & -0.011          &                 & -0.003          \\
+                     &                 &                 &                 & (0.004)         &                 & (0.002)         \\
+Invest               &                 &                 &                 &                 & \textbf{0.017}  & 0.012           \\
+ &                 &                 &                 &                 & (0.009)         & (0.009)         \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}
+
+\begin{singlespacing}
+\begin{table}[H]
+\setlength{\tabcolsep}{23pt}
+\centering
+\small
+{\captionsetup{justification=centering,singlelinecheck=off}
+\caption{ \bfseries DGTW CS measure vs. six-factor betas} \label{table10}}
+\caption*{This table presents the time series averages of monthly cross-sectional regressions of the DGTW characteristic selectivity (CS) measure on the Fama-French six-factor betas. We calculate the average DGTW CS measure across the past 24 months. We estimate the six-factor model over the same 24-month period using daily fund returns. In Panel A, the DGTW CS measure controls for the size, value and momentum characteristics. In Panel B, the DGTW CS measure also controls for the profitability and investment characteristics. \citet{fama1973risk} t-statistics with the \citet{newey1986simple} correction of 12 lags are reported in parenthesis. Estimates significant at the 5\% are in bold font. Starting with the $24^{\text{th}}$ month in our sample, the monthly regressions cover the period December 2002 to December 2016.}
+\setlength{\tabcolsep}{14pt}
+\label{my-label}
+\begin{tabular}{crrrrrrr}
+\hline
+\multicolumn{8}{l}{Panel A: Size, value and momentum characteristics}                                                     \\
+Cnst & \textbf{0.225}  & 0.003   & 0.001  & -0.004         & 0.013          & 0.003  & \textbf{0.207}  \\
+     & (3.30)          & (0.31)  & (0.06) & (-0.40)        & (1.81)         & (0.32) & (2.89)          \\
+RMRF & \textbf{-0.227} &         &        &                &                &        & \textbf{-0.211} \\
+     & (-3.09)         &         &        &                &                &        & (-2.71)         \\
+SMB  &                 & -0.008  &        &                &                &        & -0.008          \\
+     &                 & (-0.35) &        &                &                &        & (-0.31)         \\
+HML  &                 &         & 0.090  &                &                &        & 0.071           \\
+     &                 &         & (1.67) &                &                &        & (1.65)          \\
+WML  &                 &         &        & \textbf{0.207} &                &        & \textbf{0.323}  \\
+     &                 &         &        & (2.31)         &                &        & (3.89)          \\
+RMW  &                 &         &        &                & \textbf{0.116} &        & 0.063           \\
+     &                 &         &        &                & (2.03)         &        & (1.18)          \\
+CMA  &                 &         &        &                &                & 0.010  & 0.001           \\
+     &                 &         &        &                &                & (0.11) & (0.02)          \\
+     &                 &         &        &                &                &        &                 \\
+\multicolumn{8}{l}{Panel B: All characteristics}                                                      \\
+Cnst & \textbf{0.250}  & 0.006   & 0.007  & 0.000          & 0.016          & 0.011  & \textbf{0.218}  \\
+     & (3.54)          & (0.59)  & (0.68) & (0.01)         & (1.79)         & (1.20) & (3.31)          \\
+RMRF & \textbf{-0.246} &         &        &                &                &        & \textbf{-0.223} \\
+     & (-3.10)         &         &        &                &                &        & (-3.08)         \\
+SMB  &                 & 0.014   &        &                &                &        & 0.013           \\
+     &                 & (0.76)  &        &                &                &        & (0.60)          \\
+HML  &                 &         & 0.046  &                &                &        & 0.024           \\
+     &                 &         & (1.06) &                &                &        & (0.48)          \\
+WML  &                 &         &        & \textbf{0.237} &                &        & \textbf{0.351}  \\
+     &                 &         &        & (2.59)         &                &        & (4.11)          \\
+RMW  &                 &         &        &                & \textbf{0.092} &        & 0.067           \\
+     &                 &         &        &                & (2.23)         &        & (1.27)          \\
+CMA  &                 &         &        &                &                & 0.019  & 0.041           \\
+     &                 &         &        &                &                & (0.29) & (0.91)          \\ \hline
+\end{tabular}
+\end{table}
+\end{singlespacing}

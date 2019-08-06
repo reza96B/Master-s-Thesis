@@ -1,0 +1,230 @@
+\documentclass[12pt,letter]{article}
+\usepackage{tabu}
+\usepackage{rotating}
+\usepackage[flushleft]{threeparttable}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tikz}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usetikzlibrary{matrix,calc}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{cleveref}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage[demo]{graphicx}
+\usepackage{adjustbox}
+\usepackage{comment}
+\usepackage[textfont=normalfont,singlelinecheck=off,justification=raggedright]{subcaption}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage{apacite}
+\usepackage{apalike}
+\usepackage[toc,page]{appendix}
+\usepackage{afterpage}
+\usepackage{rotating}
+\usepackage{flafter}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage[explicit]{titlesec}
+\usepackage[normalem]{ulem}
+\usepackage{sectsty}
+
+\makeatletter
+\renewcommand\section{%
+  \@startsection{section}{1}
+                {\z@}%
+                {-3.5ex \@plus -1ex \@minus -.2ex}%
+                {2.3ex \@plus.2ex}%
+                {\normalfont\fontsize{15.8}{17.1}\bfseries}% 11pt
+}
+
+% \subsectionfont{\normalsize}
+% \usepackage{sectsty}
+%     \subsubsectionfont{\MakeUppercase\rmfamily\underline\normalfont}
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+
+
+\usepackage{float}
+\usepackage{multicol}
+\setlength{\columnsep}{-2cm}
+\usepackage{wrapfig}
+\usepackage{array}
+
+\usepackage{cite}
+\usepackage{longtable}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{enumitem}
+
+\usepackage{array}
+\captionsetup[table]{labelfont = bf}
+\captionsetup[figure]{ labelfont = bf}
+\usepackage{booktabs}
+ \usepackage{amsmath}
+ \usepackage{graphicx}
+ \usepackage[flushleft]{threeparttable}
+ \usepackage{apacite}
+ \usepackage{caption}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{lipsum}
+
+
+\usepackage{natbib}
+ \usepackage{multicol}
+\usepackage{rotating}
+ \usepackage{wrapfig}
+ \usepackage{array}
+ \usepackage{color}
+
+\usepackage{url}
+
+\DeclareUrlCommand\ULurl{%
+  \renewcommand\UrlFont{\ttfamily\color{blue}}%
+  \renewcommand\UrlLeft{\uline\bgroup}%
+  \renewcommand\UrlRight{\egroup}}
+
+ \usepackage{footnote}
+\usepackage{stackrel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tabularx}
+\setcounter{secnumdepth}{4}
+\usepackage{multicol}
+\usepackage{hyperref}
+% \titleformat{\paragraph}
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titlespacing*{\paragraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\usepackage{breqn}
+\captionsetup{
+  font=normalsize,
+ justification=raggedright,
+ singlelinecheck=false} 
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\allowdisplaybreaks
+
+
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+%  \lhead{\includegraphics[scale=0.81]{pictures/robeco1.png}}
+%  \renewcommand{\headrulewidth}{0pt}
+\linespread{1.5}
+
+\title{%On the use of factor betas versus characteristics in the performance evaluation of mutual funds \\ 
+Constructing and using double-adjusted alphas to analyze mutual fund performance}
+
+\author{%Reza Brink \quad Erik Kole\thanks{Corresponding author. Address: Burg. Oudlaan 50, Room ET-31, P.O. Box 1738, 3000DR Rotterdam, The Netherlands, Tel. +31 10 408 12 58. E-mail addresses \texttt{kole@ese.eur.nl.}} 
+%\\  \small{Econometric Institute, Erasmus School of Economics, Erasmus University Rotterdam} 
+}
+
+\date{%\today
+}
+
+\begin{document}
+%\maketitle
+% \nocite{*}
+%\begin{titlepage}
+	%\begin{centering}
+
+
+%	\includegraphics[width=0.15\textwidth]{pictures/erasmus.png}
+%   \par\vspace{0.45cm}
+%	{\scshape Master's Thesis \\ Econometrics \& Management Science, Quantitative Finance \\  Erasmus University Rotterdam, The Netherlands\par}
+%	\vspace{0.45cm}
+	
+%	{\Large\bfseries On the use of factor betas versus characteristics in the performance evaluation of mutual funds    \par}
+%	\vspace{0.45cm}
+%	{\scshape  Author: Reza Brink \par \\ Student ID: 380953 \par \\ }
+%	\vspace{0.45cm}
+%	{\scshape  University supervisor: Erik Kole \par \\ University Co-reader: Dick van Dijk \par  \\ }
+%	\centering
+ %    ~\\
+%    {\large \today\par}
+%\end{centering}
+%\end{titlepage}
+
+
+\maketitle
+%\newpage
+
+    \begin{abstract}\noindent
+    %We propose a new approach for estimating mutual fund performance that simultaneously controls for both factor exposure and firm characteristics. This double-adjusted alpha is motivated by the recent findings that traditional Fama-French style factor models do not fully adjust returns for the anomalies related to the factors. We formulate a hierarchical Bayesian model which separates the part of the traditional alpha that can be related to firm and asset characteristics from the true alpha. Our Bayesian approach is straightforward, has theoretical advantages over the traditional two-pass estimation and leads to higher precision. Our double-adjusted alphas produce a different ranking of mutual funds than the traditional alphas. We show that as a consequence, the double-adjusted alphas lead to stronger evidence of persistence of mutual fund performance. On the other hand, we find that the link between selectivity and alpha is driven by the effect of characteristics. Finally, we show that fund flows are mostly driven by the true skill part of the return and hardly by the effect of characteristics. We conclude that good measurement of the true outperformance of mutual funds is crucial for understanding skill.
+    
+    We propose a new approach for estimating mutual fund performance controlling for both factor exposure and characteristics. Motivated factor models' failure to fully adjust returns for anomalies, our hierarchical Bayesian model separates the true alpha from the effect of stock characteristics. It is straightforward and improves the traditional two-pass estimation. Our double-adjusted alphas produce a different ranking of mutual funds than the traditional alphas. Consequently, evidence of persistence in performance increases, the link between selectivity and alpha disappears, but fund flows are related to the true alpha and not to characteristics. Concludingly, measuring true outperformance is crucial for understanding skill.
+   %This paper introduces a new approach for estimating mutual fund performance that simultaneously controls for both factor model betas and firm characteristics. Our double-adjusted performance measure is motivated by growing concerns in the literature regarding the ability of traditional Fama-French style factor models to adjust returns for the main anomalies. We adopt a hierarchical Bayes approach to model conditional multi-factor model alphas as a linear combination of firm characteristics. We find that traditional alphas are significantly associated with firm characteristics, even when the factor model explicitly adjusts returns for those characteristics. Double-adjusted performance provides new evidence of mutual fund performance persistence, as we remove the noisy component of performance associated with passive loadings on characteristics. Moreover, we find that  previous relations between traditional performance estimates and specific fund features, e.g., mutual fund selectivity and mutual fund flows, are partially driven by the characteristic component of performance.
+   
+   \noindent \textbf{Keywords}: Mutual fund performance, Double-adjusted performance, Firm characteristics, Hierarchical Bayes \\
+   \noindent \textbf{JEL codes}: G11, G23, C11
+  
+\end{abstract}
+
+
+\par
+ \newpage
+ 
+% \tableofcontents
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+
+
+\newpage
+\setcounter{page}{1}
+
+\section{Introduction}
+\input{Chapters/Introduction}
+
+\section{Data}
+\input{Chapters/Data}
+
+% \section{Explaining Mutual Fund Returns: Betas vs. Characteristics  }
+% \input{Chapters/FamaMacBeth}
+    
+ \section{Double-adjusted Mutual Fund Performance Measure} 
+\input{Chapters/Model}
+
+\newpage
+\section{Impact on Relative Mutual Fund Performance}
+ 
+\input{Chapters/Performance}
+
+\section{Robustness Checks}
+ \input{Chapters/Robustness.tex} 
+
+\section{Conclusion}
+\input{Chapters/Conclusion.tex}
+
+
+\newpage 
+
+ \bibliographystyle{apacite}
+\bibliography{bronnen.bib}
+\addcontentsline{toc}{section}{\protect\numberline{}References}%
+
+\newpage
+\input{Chapters/Figures.tex}
+\input{Chapters/Tables.tex}
+
+\setcounter{equation}{0}
+\renewcommand{\theequation}{A\thechapter.\arabic{equation}}
+
+
+\appendix
+\section*{Appendices}
+\addcontentsline{toc}{section}{\protect\numberline{}Appendices}%
+\input{Chapters/Appendix}
+
+
+
+
+\end{document}
